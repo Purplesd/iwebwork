@@ -12,10 +12,6 @@ public class ProductView {
     Socket socket;
     public ProductView(Socket socket){
         this.socket=socket;
-        productView();
-    }
-    public void productView(){
-        Scanner sc = new Scanner(System.in);
         String str=0+",";
         try {
             IOManager.write(str,socket);
@@ -26,6 +22,12 @@ public class ProductView {
             }
         } catch (IOException e) {
         }
+        productView();
+
+    }
+    public void productView(){
+        Scanner sc = new Scanner(System.in);
+
         System.out.println("增加-1 删除-2 修改-3 查询-4 刷新-5 返回-6");
         System.out.print("请输入要对商品进行的操作:");
         String choose = sc.nextLine();
